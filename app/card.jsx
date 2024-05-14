@@ -32,16 +32,15 @@ export default function Card({
           className="min-h-[20rem] max-h-[20rem] min-w-full"
         />
         <p
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
-          className="absolute right-1 top-1 bg-white rounded-full p-1 bg-opacity-60 text-slate-900 hover:bg-opacity-90 cursor-pointer"
+          onClick={() => setHover(!hover)}
+          className="absolute right-1 top-1 z-10 bg-white rounded-full p-1 bg-opacity-60 text-slate-900 hover:bg-opacity-90 cursor-pointer"
         >
           <Image src="/help-button.png" width={20} height={20} alt={"Info"} />
         </p>
         <p
           className={`${robot.className} ${
             hover ? "translate-y-1" : "translate-y-full"
-          } transition-all overflow-y-clip flex justify-center h-full w-full align-middle duration-700 text-lg bg-black bg-opacity-60 text-white absolute bottom-0 left-0 right-0 p-5 rounded-t-lg shadow-2xl`}
+          } transition-all overflow-y-auto mb-1 scrollbar-thin flex justify-center h-full w-full align-middle duration-700 text-lg bg-black bg-opacity-60 text-white absolute bottom-0 left-0 right-0 p-5 rounded-t-lg shadow-2xl`}
         >
           {desc}
         </p>

@@ -90,7 +90,7 @@ export default function Body({ setLoading }) {
           </p>
         </div>
       )}
-      {!err && !lock && <li className="list-none font-sans font-medium text-lg" ref={ref}>Load More...</li>}
+      {!err && !lock && <li className="list-none font-sans font-medium text-lg" ref={ref}></li>}
     </div>
   );
 }

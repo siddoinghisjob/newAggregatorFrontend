@@ -12,7 +12,7 @@ export default function Index() {
       <Header />
       <main className="p-2 relative flex justify-center align-middle w-full hfull">
         <Body setLoading={setLoading}/>
-        {loading && <Loader/>}
+        {<Loader/>}
       </main>
     </div>
   );
