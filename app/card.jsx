@@ -19,8 +19,8 @@ export default function Card({
   const [hover, setHover] = useState(false);
 
   return (
-    <li className="flex flex-col rounded-xl overflow-hidden justify-between bg-slate-50 shadow-box text-slate-900 gap-5 border-[1px] border-slate-300 min-w-[100%] max-w-[100%] md:min-w-[30rem] md:max-w-[30rem] md:min-h-[30rem] md:max-h-[30rem]">
-      <span className="relative  overflow-hidden">
+    <li className="flex flex-col rounded-xl overflow-hidden justify-between bg-slate-100 shadow-inner text-slate-900 gap-5 border-[1px] border-slate-300 min-w-[100%] max-w-[100%] md:min-w-[30rem] md:max-w-[30rem] md:min-h-[30rem] md:max-h-[30rem]">
+      <span className="relative h-full overflow-hidden">
         <Image
           placeholder="blur"
           onError={() => setErr(true)}
@@ -31,10 +31,18 @@ export default function Card({
           height={500}
           className="min-h-[20rem] max-h-[20rem] min-w-full"
         />
-        <p onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className="absolute right-1 top-1 bg-white rounded-full p-1 bg-opacity-60 text-slate-900 hover:bg-opacity-90 cursor-pointer">
+        <p
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+          className="absolute right-1 top-1 bg-white rounded-full p-1 bg-opacity-60 text-slate-900 hover:bg-opacity-90 cursor-pointer"
+        >
           <Image src="/help-button.png" width={20} height={20} alt={"Info"} />
         </p>
-        <p className={`${robot.className} ${hover?"translate-y-1":"translate-y-full"} transition-all duration-700 text-lg bg-black bg-opacity-60 text-white absolute bottom-0 left-0 right-0 p-5 rounded-t-lg shadow-2xl`}>
+        <p
+          className={`${robot.className} ${
+            hover ? "translate-y-1" : "translate-y-full"
+          } transition-all overflow-y-clip flex justify-center h-full w-full align-middle duration-700 text-lg bg-black bg-opacity-60 text-white absolute bottom-0 left-0 right-0 p-5 rounded-t-lg shadow-2xl`}
+        >
           {desc}
         </p>
       </span>
@@ -47,12 +55,12 @@ export default function Card({
         <p>
           <Link
             href={link}
-            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-rose-600 rounded hover:bg-rose-700 text-base focus:ring-4 focus:outline-none focus:ring-rose-300"
           >
             Read
           </Link>
         </p>
-        <p className="text-gray-900 font-light">@ {domain}</p>
+        <p className="text-gray-900 font-light text-lg">@ {domain}</p>
       </span>
     </li>
   );
