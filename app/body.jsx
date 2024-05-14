@@ -6,7 +6,7 @@ import Card from "./card";
 
 export default function Body({ setLoading }) {
   const [news, setNews] = useState([]);
-  const [page, setPage] = useState(20);
+  const [page, setPage] = useState(1);
   const [err, setErr] = useState(null);
   const [lock, setLock] = useState(false);
 
